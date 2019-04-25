@@ -8,16 +8,15 @@
     </gantt-elastic>
   </q-page>
 </template>
-
-
 <script>
 import GanttElastic from "gantt-elastic";
 import GanttHeader from "gantt-elastic-header";
 import dayjs from "dayjs";
 import axios from 'axios';
-import { debug } from 'util';
 
-axios.defaults.baseURL='http:local'
+import jsonData from '../../static/task.json'
+
+axios.defaults.baseURL=''
 
 axios.interceptors.response.use(res=>{
     return res.data;
@@ -32,9 +31,11 @@ export default {
   },
   data() {
     return {
+
+      jsonData:jsonData,
       tasks:[
               {
-                id: '999',
+                id: 999,
                 label: " ",
                 start : 1556070680649,
                 end : 1556553600000,
@@ -144,50 +145,29 @@ export default {
   methods: {
     // 获取数据
     getData: function() {
-
-      
-      let test2={
-            result:1,
-            data: [{
-              id: 1,
-              label: "何少华的测试项目",
-              user: "何少华",
-              type: "project",
-              start: 1556077685861,
-              end: 1558662669000
-          },
-          {
-              id: 2,
-              label: "少华的测试任务C",
-              user: "何少华",
-              type: "task",
-              start: 1556077685861,
-              end: 1558662669000,
-              parentId: 1,
-              expander: false
-          }]
-      }
-
-         
-      
-      this.regroupData(test2)
-
-        // axios.get('http://localhost:8080/static/task.json')
-        //             .then(res => {
-        //                 this.regroupData(res)
-        //         })
+        this.regroupData(this.jsonData)
      },
     // 设置数据填充表格
-     regroupData:function(data){
-       debugger
-        if(data.result === 1){
+     regroupData:function(data){   
+        if(data.result == 1){
             let listData=data.data
             listData.forEach(item=>{
-              return item.end=item.end+(24*60*60*1000-1000)
+                   let cur={
+                        id: item.id,
+                        publicId:item.publicId,
+                        label: item.label,
+                        user: item.user,
+                        type: item.type,
+                        start: item.start,
+                        end: item.end+(24*60*60*1000-1000),
+                        percent:100,
+                        parentId:item.parentId,
+                        expander: item.expander
+                   }
+                  this.tasks.push(cur)
             })
-            this.tasks=this.tasks.concat(data.data)
             this.tasks=this.tasks.filter(function(item){
-            return item.id!='999'
+               return item.id!=999
             })
        } 
      },

@@ -7,6 +7,7 @@ module.exports = {
   transpileDependencies: [
     /[\\/]node_modules[\\/]quasar[\\/]/
   ],
+  assetsDir:"static",
   devServer: {
     port: 8080, // 端口号..
     host: "localhost",

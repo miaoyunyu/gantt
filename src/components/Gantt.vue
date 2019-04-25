@@ -15,6 +15,7 @@ import GanttElastic from "gantt-elastic";
 import GanttHeader from "gantt-elastic-header";
 import dayjs from "dayjs";
 import axios from 'axios';
+
 axios.defaults.baseURL='/api'
 axios.interceptors.response.use(res=>{
     return res.data;
@@ -141,6 +142,7 @@ export default {
   methods: {
     // 获取数据
     getData: function() {
+      
        axios.get('/projects/gantt_chart/'+'459c0426bbac407fb9d9de9ebbe53514')
              .then(res => {
                 this.regroupData(res)

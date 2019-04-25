@@ -16,6 +16,10 @@ const router = new Router({
   routes: [
     {
       path: '/',
+      component: GanttTest
+    },
+    {
+      path: '/Gantt',
       component: Gantt
     },
     {

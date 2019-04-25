@@ -1,0 +1,117 @@
+{
+    "result": 1,
+    "data": [
+        {
+            "id": 1,
+            "publicId": "459c0426bbac407fb9d9de9ebbe53514",
+            "label": "何少华的测试项目",
+            "user": "何少华",
+            "type": "project",
+            "start": 1556077685861,
+            "end": 1558662669000
+        },
+        {
+            "id": 2,
+            "publicId": "18f1591fcd9847c094bc91d32c7d448d",
+            "label": "少华的测试任务C",
+            "user": "何少华",
+            "type": "task",
+            "start": 1556160183000,
+            "end": 1556150400000,
+            "parentId": 1,
+            "expander": false
+        },
+        {
+            "id": 3,
+            "publicId": "a5d3c1d4d73d4d4db721717589a45a94",
+            "label": "少华的测试任务D",
+            "user": "何少华",
+            "type": "task",
+            "start": 1556160183000,
+            "end": 1556251200000,
+            "parentId": 1,
+            "expander": false
+        },
+        {
+            "id": 4,
+            "publicId": "d6d29a599b9840588be42026252c094a",
+            "label": "少华的测试任务B",
+            "user": "何少华",
+            "type": "task",
+            "start": 1556683200000,
+            "end": 1558238400000,
+            "parentId": 1,
+            "expander": true
+        },
+        {
+            "id": 5,
+            "publicId": "e5b2c55bf9924fadb75d0608bcfaf14f",
+            "label": "少华的测试任务A",
+            "type": "task",
+            "start": 1558238400000,
+            "end": 1558324800000,
+            "parentId": 1,
+            "expander": true
+        },
+        {
+            "id": 6,
+            "publicId": "0390f8be305a4b8ba11ec3b7f3864c34",
+            "label": "测试子任务A1",
+            "type": "task",
+            "start": 1556121600000,
+            "end": 1556121600000,
+            "parentId": 5,
+            "expander": true
+        },
+        {
+            "id": 7,
+            "publicId": "7ac5611d46544b51b61b0f70c753a5f8",
+            "label": "测试子任务B1",
+            "type": "task",
+            "start": 1556769600000,
+            "end": 1556856000000,
+            "parentId": 4,
+            "expander": false
+        },
+        {
+            "id": 8,
+            "publicId": "bb72d924ed16491c819591badc4c65de",
+            "label": "测试子任务A2",
+            "type": "task",
+            "start": 1556164800000,
+            "end": 1558324800000,
+            "parentId": 5,
+            "expander": false
+        },
+        {
+            "id": 9,
+            "publicId": "bf1167bdc11941f0b6667a2622536646",
+            "label": "测试子任务A4",
+            "type": "task",
+            "start": 1556596800000,
+            "end": 1556683200000,
+            "parentId": 5,
+            "expander": false
+        },
+        {
+            "id": 10,
+            "publicId": "dfc294d7dcd442d2957a9a2e792fb78a",
+            "label": "测试子任务3",
+            "type": "task",
+            "start": 1556424000000,
+            "end": 1556510400000,
+            "parentId": 5,
+            "expander": false
+        },
+        {
+            "id": 11,
+            "publicId": "e39f197b3c7143a1a863b760d26bfcd0",
+            "label": "测试子任务A1-1",
+            "type": "task",
+            "start": 1556424000000,
+            "end": 1556424000000,
+            "parentId": 6,
+            "expander": false
+        }
+    ]
+}

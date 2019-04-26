@@ -16,7 +16,7 @@ import axios from 'axios';
 
 import jsonData from '../../static/task.json'
 
-axios.defaults.baseURL=''
+//axios.defaults.baseURL=''
 
 axios.interceptors.response.use(res=>{
     return res.data;

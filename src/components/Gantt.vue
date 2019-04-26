@@ -17,9 +17,9 @@ import dayjs from "dayjs";
 import axios from 'axios';
 
 axios.defaults.baseURL='/api'
-axios.interceptors.response.use(res=>{
-    return res.data;
-})
+// axios.interceptors.response.use(res=>{
+//     return res.data;
+// })
 
 
 export default {
@@ -141,8 +141,7 @@ export default {
   },
   methods: {
     // 获取数据
-    getData: function() {
-      
+    getData: function() {     
        axios.get('/projects/gantt_chart/'+'459c0426bbac407fb9d9de9ebbe53514')
              .then(res => {
                 this.regroupData(res)
@@ -150,12 +149,23 @@ export default {
      },
     // 设置数据填充表格
      regroupData:function(data){
-        if(data.result === 1){
+        if(data.result == 1){
             let listData=data.data
             listData.forEach(item=>{
-              return item.end=item.end+(24*60*60*1000-1000)
+                   let cur={
+                        id: item.id,
+                        publicId:item.publicId,
+                        label: item.label,
+                        user: item.user,
+                        type: item.type,
+                        start: item.start,
+                        end: item.end+(24*60*60*1000-1000),
+                        percent:100,
+                        parentId:item.parentId,
+                        expander: item.expander
+                   }
+                  this.tasks.push(cur)
             })
-            this.tasks=this.tasks.concat(data.data)
             this.tasks=this.tasks.filter(function(item){
             return item.id!='999'
             })
